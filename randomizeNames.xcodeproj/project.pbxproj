@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		47FC8F3E1C32035200AA0443 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F3D1C32035200AA0443 /* main.m */; };
 		47FC8F411C32035200AA0443 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F401C32035200AA0443 /* AppDelegate.m */; };
-		47FC8F441C32035200AA0443 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F431C32035200AA0443 /* ViewController.m */; };
 		47FC8F471C32035200AA0443 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47FC8F451C32035200AA0443 /* Main.storyboard */; };
 		47FC8F491C32035200AA0443 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47FC8F481C32035200AA0443 /* Assets.xcassets */; };
 		47FC8F4C1C32035200AA0443 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47FC8F4A1C32035200AA0443 /* LaunchScreen.storyboard */; };
 		47FC8F571C32035200AA0443 /* randomizeNamesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F561C32035200AA0443 /* randomizeNamesTests.m */; };
 		47FC8F621C32035200AA0443 /* randomizeNamesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F611C32035200AA0443 /* randomizeNamesUITests.m */; };
+		47FC8F711C3203F300AA0443 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F6F1C3203F300AA0443 /* Model.xcdatamodeld */; };
+		47FC8F741C32046300AA0443 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F731C32046300AA0443 /* Stack.m */; };
+		47FC8F761C32049A00AA0443 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FC8F751C32049A00AA0443 /* CoreData.framework */; };
+		47FC8F7B1C3205E700AA0443 /* Entry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F781C3205E700AA0443 /* Entry+CoreDataProperties.m */; };
+		47FC8F7C1C3205E700AA0443 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F7A1C3205E700AA0443 /* Entry.m */; };
+		47FC8F811C32067600AA0443 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F801C32067600AA0443 /* EntryController.m */; };
+		47FC8F841C3206AB00AA0443 /* RandomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC8F831C3206AB00AA0443 /* RandomTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +45,6 @@
 		47FC8F3D1C32035200AA0443 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		47FC8F3F1C32035200AA0443 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47FC8F401C32035200AA0443 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		47FC8F421C32035200AA0443 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		47FC8F431C32035200AA0443 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		47FC8F461C32035200AA0443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47FC8F481C32035200AA0443 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47FC8F4B1C32035200AA0443 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,18 @@
 		47FC8F5D1C32035200AA0443 /* randomizeNamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = randomizeNamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47FC8F611C32035200AA0443 /* randomizeNamesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = randomizeNamesUITests.m; sourceTree = "<group>"; };
 		47FC8F631C32035200AA0443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47FC8F701C3203F300AA0443 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		47FC8F721C32046300AA0443 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = randomizeNames/Stack.h; sourceTree = "<group>"; };
+		47FC8F731C32046300AA0443 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = randomizeNames/Stack.m; sourceTree = "<group>"; };
+		47FC8F751C32049A00AA0443 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		47FC8F771C3205E700AA0443 /* Entry+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entry+CoreDataProperties.h"; path = "randomizeNames/Entry+CoreDataProperties.h"; sourceTree = "<group>"; };
+		47FC8F781C3205E700AA0443 /* Entry+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Entry+CoreDataProperties.m"; path = "randomizeNames/Entry+CoreDataProperties.m"; sourceTree = "<group>"; };
+		47FC8F791C3205E700AA0443 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Entry.h; path = randomizeNames/Entry.h; sourceTree = "<group>"; };
+		47FC8F7A1C3205E700AA0443 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Entry.m; path = randomizeNames/Entry.m; sourceTree = "<group>"; };
+		47FC8F7F1C32067600AA0443 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntryController.h; path = ../EntryController.h; sourceTree = "<group>"; };
+		47FC8F801C32067600AA0443 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntryController.m; path = ../EntryController.m; sourceTree = "<group>"; };
+		47FC8F821C3206AB00AA0443 /* RandomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomTableViewController.h; path = ../RandomTableViewController.h; sourceTree = "<group>"; };
+		47FC8F831C3206AB00AA0443 /* RandomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RandomTableViewController.m; path = ../RandomTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FC8F761C32049A00AA0443 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +98,7 @@
 		47FC8F301C32035200AA0443 = {
 			isa = PBXGroup;
 			children = (
+				47FC8F751C32049A00AA0443 /* CoreData.framework */,
 				47FC8F3B1C32035200AA0443 /* randomizeNames */,
 				47FC8F551C32035200AA0443 /* randomizeNamesTests */,
 				47FC8F601C32035200AA0443 /* randomizeNamesUITests */,
@@ -101,10 +119,10 @@
 		47FC8F3B1C32035200AA0443 /* randomizeNames */ = {
 			isa = PBXGroup;
 			children = (
-				47FC8F3F1C32035200AA0443 /* AppDelegate.h */,
-				47FC8F401C32035200AA0443 /* AppDelegate.m */,
-				47FC8F421C32035200AA0443 /* ViewController.h */,
-				47FC8F431C32035200AA0443 /* ViewController.m */,
+				47FC8F821C3206AB00AA0443 /* RandomTableViewController.h */,
+				47FC8F831C3206AB00AA0443 /* RandomTableViewController.m */,
+				47FC8F7E1C32062C00AA0443 /* controller */,
+				47FC8F7D1C32060F00AA0443 /* Model */,
 				47FC8F451C32035200AA0443 /* Main.storyboard */,
 				47FC8F481C32035200AA0443 /* Assets.xcassets */,
 				47FC8F4A1C32035200AA0443 /* LaunchScreen.storyboard */,
@@ -138,6 +156,32 @@
 				47FC8F631C32035200AA0443 /* Info.plist */,
 			);
 			path = randomizeNamesUITests;
+			sourceTree = "<group>";
+		};
+		47FC8F7D1C32060F00AA0443 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47FC8F721C32046300AA0443 /* Stack.h */,
+				47FC8F731C32046300AA0443 /* Stack.m */,
+				47FC8F771C3205E700AA0443 /* Entry+CoreDataProperties.h */,
+				47FC8F781C3205E700AA0443 /* Entry+CoreDataProperties.m */,
+				47FC8F791C3205E700AA0443 /* Entry.h */,
+				47FC8F7A1C3205E700AA0443 /* Entry.m */,
+				47FC8F6F1C3203F300AA0443 /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		47FC8F7E1C32062C00AA0443 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				47FC8F7F1C32067600AA0443 /* EntryController.h */,
+				47FC8F801C32067600AA0443 /* EntryController.m */,
+				47FC8F3F1C32035200AA0443 /* AppDelegate.h */,
+				47FC8F401C32035200AA0443 /* AppDelegate.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,9 +314,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47FC8F441C32035200AA0443 /* ViewController.m in Sources */,
+				47FC8F7C1C3205E700AA0443 /* Entry.m in Sources */,
+				47FC8F741C32046300AA0443 /* Stack.m in Sources */,
 				47FC8F411C32035200AA0443 /* AppDelegate.m in Sources */,
+				47FC8F7B1C3205E700AA0443 /* Entry+CoreDataProperties.m in Sources */,
+				47FC8F811C32067600AA0443 /* EntryController.m in Sources */,
 				47FC8F3E1C32035200AA0443 /* main.m in Sources */,
+				47FC8F841C3206AB00AA0443 /* RandomTableViewController.m in Sources */,
+				47FC8F711C3203F300AA0443 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +565,20 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		47FC8F6F1C3203F300AA0443 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				47FC8F701C3203F300AA0443 /* Model.xcdatamodel */,
+			);
+			currentVersion = 47FC8F701C3203F300AA0443 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = randomizeNames/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 47FC8F311C32035200AA0443 /* Project object */;
 }

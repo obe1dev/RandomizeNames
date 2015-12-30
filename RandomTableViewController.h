@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RandomTableViewController.h
 //  randomizeNames
 //
 //  Created by Brock Oberhansley on 12/28/15.
@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
 
-@interface ViewController : UIViewController
+@interface RandomTableViewController : UITableViewController
 
+@property (strong, nonatomic) Entry *entry;
 
 @end
-
