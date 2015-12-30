@@ -12,6 +12,7 @@
 @interface RandomTableViewController ()
 
 @property (strong, nonatomic) NSArray *namesArray;
+@property int i;
 
 @end
 
@@ -24,7 +25,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,6 +65,8 @@
     
     self.namesArray = [self shuffleArray:array];
     
+    self.i = 0;
+    
     [self.tableView reloadData];
     
     
@@ -85,62 +88,93 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-//    if ([EntryController sharedInstance].entries.count%2 == 0) {
-//        return [EntryController sharedInstance].entries.count/2;
-//    }else{
-//       return ([EntryController sharedInstance].entries.count/2) + 1;
-//    }
-    return 1;
+    if (self.namesArray == nil) {
+        return 1;
+    }else{
+    
+        if ([EntryController sharedInstance].entries.count%2 == 0) {
+            return [EntryController sharedInstance].entries.count/2;
+        }else{
+            return ([EntryController sharedInstance].entries.count/2) + 1;
+        }
+        
+    }
 
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return @"match";
+    if (self.namesArray == nil) {
+        return @"";
+    }else{
+        return @"match";
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.namesArray == nil) {
+            return [EntryController sharedInstance].entries.count;
+        
+    }else{
+        return 2;
+    }
 
-    return [EntryController sharedInstance].entries.count;
+
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"nameCell" forIndexPath:indexPath];
     
+    Entry *entry;
+    
     if (self.namesArray == nil) {
         
-        Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
-        cell.textLabel.text = entry.name;
-
+       entry = [EntryController sharedInstance].entries[indexPath.row];
+        
     }else{
         
-        Entry *entry = self.namesArray[indexPath.row];
-        cell.textLabel.text = entry.name;
+//        entry = self.namesArray[indexPath.row];
+        entry = self.namesArray[self.i];
+        self.i++;
         
     }
+    
+//    NSString *sectionTitle = [animalSectionTitles objectAtIndex:indexPath.section];
+//    NSArray *sectionAnimals = [animals objectForKey:sectionTitle];
+//    NSString *animal = [sectionAnimals objectAtIndex:indexPath.row];
+//    cell.textLabel.text = animal;
+    
+    cell.textLabel.text = entry.name;
     
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
+
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        
+        self.namesArray = nil;
+        
+        [self.tableView reloadData];
+        
+        [[EntryController sharedInstance] removeName:[EntryController sharedInstance].entries[indexPath.row]];
+            
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
