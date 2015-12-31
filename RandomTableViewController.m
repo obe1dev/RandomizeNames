@@ -169,7 +169,6 @@
         
     }else{
         
-//        entry = self.namesArray[indexPath.row];
         entry = self.namesArray[self.i];
         self.i++;
         
