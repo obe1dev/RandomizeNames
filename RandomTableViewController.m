@@ -14,12 +14,14 @@
 @property (strong, nonatomic) NSArray *namesArray;
 @property int i;
 
+
 @end
 
 @implementation RandomTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -59,13 +61,47 @@
     
 }
 
+-(void)AddNameAlert{
+    
+    UIAlertController *alerController = [UIAlertController alertControllerWithTitle:@"Add One More Name" message:@"You must have an even amount of names for you to randomize" preferredStyle:UIAlertControllerStyleAlert];
+    [alerController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Name";
+    }];
+    
+    UIAlertAction *addName = [UIAlertAction actionWithTitle:@"ADD" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        self.entry = [[EntryController sharedInstance] createName:alerController.textFields.firstObject.text];
+        
+        self.namesArray = nil;
+        
+        [self.tableView reloadData];
+        
+        
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alerController addAction:addName];
+    [alerController addAction:cancel];
+    
+    [self presentViewController:alerController animated:YES completion:nil];
+    
+}
+
+
 - (IBAction)randomizeButton:(id)sender {
     
-    NSMutableArray *array = [NSMutableArray arrayWithArray:[EntryController sharedInstance].entries];
+    if ([EntryController sharedInstance].entries.count%2 == 1) {
+        [self AddNameAlert];
+    }else{
+        NSMutableArray *array = [NSMutableArray arrayWithArray:[EntryController sharedInstance].entries];
+        
+        self.namesArray = [self shuffleArray:array];
+        
+        self.i = 0;
+    }
     
-    self.namesArray = [self shuffleArray:array];
     
-    self.i = 0;
     
     [self.tableView reloadData];
     
@@ -138,12 +174,7 @@
         self.i++;
         
     }
-    
-//    NSString *sectionTitle = [animalSectionTitles objectAtIndex:indexPath.section];
-//    NSArray *sectionAnimals = [animals objectForKey:sectionTitle];
-//    NSString *animal = [sectionAnimals objectAtIndex:indexPath.row];
-//    cell.textLabel.text = animal;
-    
+
     cell.textLabel.text = entry.name;
     
     return cell;
@@ -153,7 +184,8 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-
+    
+   
     return YES;
 }
 
@@ -172,7 +204,9 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    
+    
 }
 
 
